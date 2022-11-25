@@ -1,0 +1,131 @@
+<?php
+include 'admin/connect.php';
+include 'admin/session.php';
+include 'admin/header.php';
+$id = $_GET['edit_id'];
+$sql1="Select * from products where id = $id";
+          $results1=$connect->query($sql1);
+          $f=$results1->fetch_assoc();
+
+?>
+
+<body class="vertical  light  ">
+    <div class="wrapper">
+        <?php
+include 'admin/navbar.php';
+include 'admin/aside.php';
+?>
+
+        <main role="main" class="main-content">
+            <div class="container-fluid">
+
+
+                <div class="card shadow mb-4">
+                    <a href="postview.php">
+                        <button type="button" class="btn btn-primary">View Product</button>
+                    </a>
+                    <div class="card-header">
+                        <strong class="card-title">Edit Product</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form role="form" action="updateproducthandler.php" method="POST"
+                                    enctype="multipart/form-data">
+
+                                    <input hidden type="text" id="simpleinput" class="form-control"
+                                        value="<?php echo $id ?>" name="product_id">
+
+                                    <div class="form-group mb-3">
+                                        <label for="simpleinput">Product Name</label>
+                                        <input type="text" id="simpleinput" class="form-control"
+                                            placeholder="Product Name" value="<?php echo $f['name'] ?>" name="name">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="example-password">Product Description</label>
+                                        <input value="<?php echo $f['description'] ?>" type="text" id="example-password"
+                                            class="form-control" name="description" placeholder="Product Description">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="example-password">Product Price</label>
+                                        <input value="<?php echo $f['price'] ?>" type="text" id="example-password"
+                                            class="form-control" name="price" placeholder="Product price">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="custom-select">Select Category</label>
+                                        <?php
+                                        $cid =$f['category_id'];
+                                        $sqlq="Select * from categories where id=$cid";
+          $resultsq=$connect->query($sqlq);
+          $finalq=$resultsq->fetch_assoc();
+          ?>
+
+                                        <select name="category_id" class="custom-select" id="custom-select">
+                                            <option value="<?php echo $finalq['id'];?>" selected>
+                                                <?php echo $finalq['name'] ?>
+                                            </option>
+                                            <?php
+          $sql="Select * from categories";
+          $results=$connect->query($sql);
+          while($final=$results->fetch_assoc()){ ?>
+                                            <option value="<?php echo $final['id'];?>"><?php echo $final['name'];?>
+                                            </option>
+                                            <?php }
+                                        ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="custom-select">Is New</label>
+                                        <select name="is_new" class="custom-select" id="custom-select">
+                                            <option value="<?php echo $f['is_new'];?>" selected>
+                                                <?php if($f['is_new']==1){
+                                                echo "New Book";
+                                            }
+                                            else{
+                                                echo "Old Book";
+                                            }
+                                            ?></option>
+
+                                            <option value="0">
+                                                Old Book
+                                            </option>
+                                            <option value="1">
+                                                New Book
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="customFile">Select Product Image</label>
+                                        <div class="custom-file">
+                                            <input type="file" name="product_file" required class="custom-file-input"
+                                                id="customFile">
+                                            <label class="custom-file-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+
+                        <input type="submit" id="example-palaceholder" class="btn btn-primary" name="update"
+                            value="Submit">
+
+
+                    </div>
+                </div> <!-- /.col -->
+                </form>
+            </div>
+    </div>
+    </div>
+
+
+
+
+
+    </div> <!-- .container-fluid -->
+
+    <?php include "admin/footer.php"; ?>
