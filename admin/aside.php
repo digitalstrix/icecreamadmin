@@ -46,6 +46,14 @@
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Manage All</span>
             </a>
+            <a href="subcriptions.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Manage Subcriptions</span>
+            </a>
+            <a href="addmember.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Add C. Manager</span>
+            </a>
             <a href="addblog.php" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Add Blogs</span>
@@ -62,6 +70,22 @@
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Add News Category</span>
             </a>
+            <a href="addpackage.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Add Packages</span>
+            </a>
+            <a href="packages.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Manage Packages</span>
+            </a>
+            <a href="addoums.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Add Oums</span>
+            </a>
+            <a href="uoms.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Manage Oums</span>
+            </a>
             <a href="news.php" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Manage News</span>
@@ -73,6 +97,10 @@
             <a href="posts.php" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>
                 <span class="ml-3 item-text">Manage Posts</span>
+            </a>
+            <a href="advertisement.php" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-box fe-16"></i>
+                <span class="ml-3 item-text">Manage Advertise.</span>
             </a>
             <!-- <a href="bets.php" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-box fe-16"></i>

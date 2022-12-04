@@ -23,7 +23,7 @@ include 'admin/aside.php';
                             <div class="row align-items-center">
                                 <div class="col-md-3 text-center mb-5">
                                     <a href="#!" class="avatar avatar-xl">
-                                        <img src="<?php echo $uri.$final['image']; ?>"
+                                        <img src="<?php echo $uri.$final['image1']; ?>"
                                             alt="<?php echo $final['name']; ?>" class="avatar-img rounded">
                                     </a>
                                 </div>
@@ -37,16 +37,29 @@ include 'admin/aside.php';
                                                     ID:
                                                     <?php echo $final['id']; ?></span>
                                             </p>
+                                            <p class="small mb-3"><span class="badge badge-dark">
+                                                    Type :
+                                                    <?php if($final['type']==1){
+                                                        echo "Product";
+                                                    }else{
+                                                        echo "Service";
+                                                    } ?></span>
+                                            </p>
                                         </div>
                                         <div class="col">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-
                                         <div class="col-md-7">
                                             Description:
                                             <b>
                                                 <p class="text-muted"> <?php echo $final['description']; ?> </p>
+                                            </b>
+                                        </div>
+                                        <div class="col-md-7">
+                                            Product Code:
+                                            <b>
+                                                <p class="text-muted"> <?php echo $final['product_code']; ?> </p>
                                             </b>
                                         </div>
                                         <div class="col">
